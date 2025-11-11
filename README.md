@@ -230,7 +230,7 @@ Fork 本项目
 👥 作者
 Lq-git-hub
 
-GitHub: @ld-git-hub
+GitHub: @Lq-git-hub
 
 🙏 致谢
 感谢以下开源项目：
@@ -241,7 +241,7 @@ Element Plus
 
 Vite
 
-项目地址: https://github.com/ld-git-hub/big-event
+项目地址: https://github.com/Lq-git-hub/big-event
 
 如果觉得这个项目对你有帮助，请给个 ⭐️ 支持一下！
 

@@ -1,10 +1,10 @@
 <script setup>
-import pageContainer from '@/components/pageContainer.vue';
+import pageContainer from '@/components/pageContainer.vue'
 import {ref} from 'vue'
 import { Plus,Upload } from '@element-plus/icons-vue'
-import { useUserstore } from '@/stores';
+import { useUserstore } from '@/stores'
 import {userUpdataAvatarService} from '@/api/user'
-import { ElMessage } from 'element-plus';
+import { ElMessage } from 'element-plus'
 
 const uploadRef = ref()
 const useStore = useUserstore()
@@ -18,7 +18,7 @@ const onUploadFile = (file) => {
   }
 }
 const onUpdateAvatar = async () => {
-  await userUpdataAvatarService(imageUrl.value)
+  await userUpdataAvatarService({ avatar: imageUrl.value })
   await useStore.getUser()
   ElMessage({ type: 'success', message: '更换头像成功' })
 }

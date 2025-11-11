@@ -21,7 +21,7 @@ export const userUpdataInfoService = ({id,username,nickname,email})=>{
 }
 
 // 更新用户头像
-export const userUpdataAvatarService = (avatar)=>{
+export const userUpdataAvatarService = ({avatar})=>{
   return request.patch('/my/update/avatar',{avatar})
 }
 

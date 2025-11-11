@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useUserstore} from '@/stores'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +18,19 @@ const router = createRouter({
       ]
     }
   ]
+})
+
+router.beforeEach((to) => {
+  const userStore = useUserstore()
+  // 如果用户没有token且访问的不是登录页，重定向到登录页
+  if (!userStore.token && to.path !== '/login') {
+    return '/login'
+  }
+
+  // 如果用户有token且访问的是登录页，重定向到首页
+  if (userStore.token && to.path === '/login') {
+    return '/'
+  }
 })
 
 export default router
